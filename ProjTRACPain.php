@@ -22,15 +22,15 @@ class ProjTRACPain extends AbstractExternalModule {
         $this->emDebug('project_id', $project_id);
         if (!$project_id) return [];
 
-        // Step 1: Get recruitment_arm_1 data
+        // Step 1: Get baseline_arm_2 data
         $params_recruit = [
             'project_id' => $project_id,
             'fields' => ['record_id', 'myphd_id', 'youth_intro_day'],
-            'events' => ['recruitment_arm_1'],
+            'events' => ['baseline_arm_2'],
             'return_format' => 'array'
         ];
         $recruit_data = \REDCap::getData($params_recruit);
-        $this->emDebug('recruitment_arm_1 data', $recruit_data);
+        $this->emDebug('baseline_arm_2 data', $recruit_data);
 
         // Step 2: Get daily_arm_4 data
         $params_daily = [
